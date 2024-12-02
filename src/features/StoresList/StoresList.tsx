@@ -11,7 +11,7 @@ export default async function StoresList() {
     <div>
       <h1>Stores list</h1>
       {storesList.map((store) => (
-        <h1>{store.name}</h1>
+        <h1 key={store.id}>{store.name}</h1>
       ))}
     </div>
   );
