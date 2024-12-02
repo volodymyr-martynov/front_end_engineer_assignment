@@ -1,5 +1,6 @@
 import { GamesList } from '@/features/GamesList';
 import { LeaderBoard } from '@/features/LeaderBoard';
+import { PremiumCurrency } from '@/features/PremiumCurrency';
 import { StoresList } from '@/features/StoresList';
 import { getServerSession } from 'next-auth';
 
@@ -10,6 +11,7 @@ export default async function Home() {
 
   return (
     <div>
+      <PremiumCurrency />
       <GamesList />
       <StoresList />
       <LeaderBoard />
