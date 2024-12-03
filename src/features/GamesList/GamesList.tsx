@@ -14,9 +14,10 @@ export default async function GameListContainer() {
     <Container>
       <SectionHeader title="Games list" />
       <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {data.map(({ id, name, background_image, released }) => (
+        {data.map(({ id, slug, name, background_image, released }) => (
           <GameCard
             key={id}
+            slug={slug}
             title={name}
             image={background_image}
             released={released}

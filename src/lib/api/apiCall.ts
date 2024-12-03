@@ -13,7 +13,7 @@ export default async function apiCall<T>({ path }: IApiCallParams): Promise<{
     const data = await res.json();
 
     return {
-      data: data.results,
+      data: data?.results || data,
     };
   } catch (error) {
     return {

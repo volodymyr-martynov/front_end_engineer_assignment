@@ -7,3 +7,7 @@ import { IGame } from '@/types/game';
 export async function getGames(): Promise<IApiResponse<IGame>> {
   return apiCall<IGame>({ path: '/games' });
 }
+
+export async function getGameBySlug(slug: string): Promise<any> {
+  return apiCall<any>({ path: `/games/${slug}` });
+}
