@@ -11,5 +11,5 @@ export default async function GameDetailsPage({ params }: any) {
     return <ErrorMessage />;
   }
 
-  return <GameDetails gameData={gameDetailsData} />;
+  return <GameDetails gameDetailsData={gameDetailsData} />;
 }

@@ -1,12 +1,15 @@
+import SectionTitle from '@/features/GameDetails/components/SectionTitle';
+import { IPlatform } from '@/types/game';
+
 interface IPlatformStatisticProps {
-  platforms: { platform: { name: string; games_count: number }; id: number }[];
+  platforms: IPlatform[];
 }
 export default function PlatformStatistic({
   platforms,
 }: IPlatformStatisticProps) {
   return (
     <div className="mt-6">
-      <h2 className="text-2xl font-semibold">Platforms</h2>
+      <SectionTitle title="Platforms" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
         {platforms.map((platform, index) => (
           <div

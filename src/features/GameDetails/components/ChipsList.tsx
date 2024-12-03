@@ -1,3 +1,5 @@
+import SectionTitle from '@/features/GameDetails/components/SectionTitle';
+
 interface IChipsListProps {
   items: { name: string; id: number }[];
   title: string;
@@ -5,7 +7,7 @@ interface IChipsListProps {
 export default function ChipsList({ items, title }: IChipsListProps) {
   return (
     <div className="mt-6">
-      <h2 className="text-2xl font-semibold">{title}</h2>
+      <SectionTitle title={title} />
       <div className="flex flex-wrap gap-2 mt-2">
         {items.map((item) => (
           <span

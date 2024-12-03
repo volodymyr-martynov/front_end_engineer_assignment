@@ -1,3 +1,5 @@
+import SectionTitle from '@/features/GameDetails/components/SectionTitle';
+
 interface IDevelopersProps {
   items: { name: string; id: number }[];
   title: string;
@@ -5,7 +7,7 @@ interface IDevelopersProps {
 export default function Developers({ items, title }: IDevelopersProps) {
   return (
     <div className="mt-6">
-      <h2 className="text-2xl font-semibold">{title}</h2>
+      <SectionTitle title={title} />
       <div className="flex gap-4 mt-2">
         {items.map((publisher, index) => (
           <a
