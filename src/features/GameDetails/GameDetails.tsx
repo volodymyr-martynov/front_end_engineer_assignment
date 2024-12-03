@@ -5,7 +5,6 @@ import PlatformStatistic from '@/features/GameDetails/components/PlatformStatist
 import Developers from '@/features/GameDetails/components/Developers';
 import { IGameDetails } from '@/types/game';
 import SectionTitle from '@/features/GameDetails/components/SectionTitle';
-import Ratings from '@/features/GameDetails/components/Ratings';
 
 interface IGameDetailsProps {
   gameDetailsData: IGameDetails;
