@@ -1,3 +1,4 @@
+import { PremiumCurrency } from '@/features/PremiumCurrency';
 import Providers from '@/providers/Providers';
 import { Header } from '@/shared/Header';
 import type { Metadata } from 'next';
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main>{children}</main>
+          <PremiumCurrency />
         </Providers>
       </body>
     </html>
