@@ -7,12 +7,25 @@ interface IStoreCardProps {
 }
 export default function StoreCard({ domain, image, name }: IStoreCardProps) {
   return (
-    <a href={`https://${domain}`} className="mb-2" target="_blank">
-      <div className="flex items-center justify-between bg-gray-800 p-4 rounded-xl text-white">
-        <div className="min-h-[100px] flex items-center">
-          <Image src={image} alt={name} width={200} height={200} />
-        </div>
-        <h3 className="text-3xl font-bold">{name}</h3>
+    <a
+      href={`https://${domain}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative block mb-4 group rounded-xl overflow-hidden transform transition-transform hover:scale-105 shadow-md hover:shadow-lg"
+    >
+      <div className="relative w-full h-40">
+        <Image
+          src={image}
+          alt={name}
+          width={1440}
+          height={200}
+          className="group-hover:brightness-75 transition-all"
+        />
+      </div>
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <h3 className="text-3xl font-bold text-white group-hover:text-green-400 transition-colors">
+          {name}
+        </h3>
       </div>
     </a>
   );

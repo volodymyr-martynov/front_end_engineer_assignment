@@ -10,6 +10,8 @@ export default async function StoresList() {
     return <h1>SWW</h1>;
   }
 
+  console.log(storesList[0]);
+
   return (
     <Container>
       <SectionHeader title="Stores list" />

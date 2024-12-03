@@ -17,12 +17,24 @@ export default function GameCard({
   return (
     <Link
       href={`/games/${slug}`}
-      className="max-w-sm mx-auto overflow-hidden rounded-lg shadow-lg bg-gray-800 text-white transition transform hover:scale-105 hover:shadow-2xl cursor-pointer"
+      className="relative block max-w-sm mx-auto shadow-md rounded-xl overflow-hidden bg-gray-800 text-white transition-transform transform hover:scale-105 hover:shadow-3xl cursor-pointer"
     >
-      <Image src={image} alt={title} width={400} height={400} />
-      <div className="p-4">
-        <h3 className="mb-2 font-bold text-2xl">{title}</h3>
-        <span>{released}</span>
+      <div className="relative w-full h-64">
+        <Image
+          src={image}
+          alt={title}
+          width={600}
+          height={600}
+          className="w-[100%] h-[100%] object-cover"
+        />
+      </div>
+      <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black via-transparent to-transparent p-4">
+        <div>
+          <h3 className="text-xl font-bold text-white hover:text-green-400 transition-colors">
+            {title}
+          </h3>
+          <span className="text-sm text-gray-300">Released: {released}</span>
+        </div>
       </div>
     </Link>
   );
