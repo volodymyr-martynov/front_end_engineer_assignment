@@ -1,6 +1,10 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Philosophy
+
+This project follows the best practices recommended by Next.js, fully utilizing its powerful features while maintaining its simplicity and straightforward nature. Next.js serves as an excellent foundation for creating modern, efficient, and scalable applications.
+
+## How to run project
 
 First, run the development server:
 
@@ -16,21 +20,36 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Decisions & Assumptions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. ### Container/Presenter Pattern:
 
-## Learn More
+   Adopted the container/presenter pattern to separate data fetching logic from UI components, ensuring better modularity and maintainability.
 
-To learn more about Next.js, take a look at the following resources:
+2. ### Server Actions for Data Fetching:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Implemented "server actions" for fetching data in server components with a caching mechanism of 1 hour to optimize performance.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. ### Centralized API Calls:
 
-## Deploy on Vercel
+   Centralized all API interactions in an apiCall function, utilizing TypeScript generics to handle various data types efficiently.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. ### Flexible Component Design:
+   Designed components to adapt to future extensions without significant refactoring.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Area for future improvement
+
+1. ### Enhanced Page Functionality:
+
+   Create dedicated pages for /games, /stores, and /creators to include fully paginated lists, filters, and additional features.
+
+2. ### Optimized State Management:
+
+   As the application scales, consider implementing global state management or migrating to React Query to reduce API calls and improve state handling.
+
+3. ### Comprehensive Testing:
+
+   Introduce comprehensive unit testing and integration tests to ensure code reliability and maintainability.
+
+4. ### zUser Account Management:
+   Add a user account page for enhanced personalization and user engagement.
