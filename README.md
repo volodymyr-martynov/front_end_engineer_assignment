@@ -9,13 +9,18 @@ This project follows the best practices recommended by Next.js, fully utilizing 
 First, run the development server:
 
 ```bash
+
+create .env file
+
+yarn
+# or
+npm i
+
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
