@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="shadow-md fixed top-0 right-0 left-0 bg-diamond z-[10]">
+    <header className="bg-gray-800 shadow-medium">
       <Container>
         <div className="flex justify-between py-4">
           <Link href="/">

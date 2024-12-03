@@ -17,7 +17,7 @@ export default function GameCard({
   return (
     <Link
       href={`/games/${slug}`}
-      className="relative block max-w-sm mx-auto shadow-md rounded-xl overflow-hidden bg-gray-800 text-white transition-transform transform hover:scale-105 hover:shadow-3xl cursor-pointer"
+      className="relative block max-w-sm mx-auto shadow-medium rounded-xl overflow-hidden bg-gray-800 text-white transition-transform transform hover:scale-105 hover:shadow-heavy cursor-pointer"
     >
       <div className="relative w-full h-64">
         <Image

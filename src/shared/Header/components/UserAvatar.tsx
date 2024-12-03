@@ -1,3 +1,4 @@
+import PremiumCurrency from '@/features/PremiumCurrency/PremiumCurrency';
 import SignInBtn from '@/shared/Header/components/SignInBtn';
 import SignOutBtn from '@/shared/Header/components/SignOutBtn';
 import { getServerSession } from 'next-auth';
@@ -18,7 +19,6 @@ export default async function UserAvatar() {
             className="rounded-[50%]"
           />
         )}
-        <span className="text-lg font-bold">{session.user.name}</span>
         <SignOutBtn />
       </div>
     );

@@ -11,7 +11,7 @@ export default function PlatformStatistic({
         {platforms.map((platform, index) => (
           <div
             key={index}
-            className="bg-gray-800 p-4 rounded-lg shadow-md flex justify-between items-center"
+            className="bg-gray-800 p-4 rounded-lg shadow-medium flex justify-between items-center"
           >
             <span className="text-lg font-medium">
               {platform.platform.name}

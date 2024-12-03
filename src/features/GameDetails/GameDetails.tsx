@@ -13,7 +13,7 @@ export default function GameDetails({ gameData }: any) {
             <img
               src={gameData.background_image}
               alt={gameData.name}
-              className="rounded-lg shadow-lg w-full h-64 object-cover"
+              className="rounded-lg shadow-medium w-full h-64 object-cover"
             />
             <h1 className="absolute bottom-4 left-4 bg-gray-800 bg-opacity-70 text-3xl font-bold p-2 rounded">
               {gameData.name}
@@ -33,7 +33,7 @@ export default function GameDetails({ gameData }: any) {
 
           <div className="mt-6">
             <h2 className="text-2xl font-semibold">ESRB Rating</h2>
-            <div className="flex items-center mt-2 bg-gray-800 p-4 rounded-lg shadow-md">
+            <div className="flex items-center mt-2 bg-gray-800 p-4 rounded-lg shadow-medium">
               <span className="text-3xl font-bold bg-red-600 text-white px-4 py-2 rounded-md mr-4">
                 {gameData.esrb_rating.name.charAt(0)}
               </span>

@@ -11,7 +11,7 @@ export default function StoreCard({ domain, image, name }: IStoreCardProps) {
       href={`https://${domain}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative block mb-4 group rounded-xl overflow-hidden transform transition-transform hover:scale-105 shadow-md hover:shadow-lg"
+      className="relative block mb-4 group rounded-xl overflow-hidden transform transition-transform hover:scale-105 shadow-medium hover:shadow-heavy"
     >
       <div className="relative w-full h-40">
         <Image

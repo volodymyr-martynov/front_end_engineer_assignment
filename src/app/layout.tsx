@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="mt-[100px]">{children}</main>
+          <main>{children}</main>
         </Providers>
       </body>
     </html>
