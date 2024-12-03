@@ -19,7 +19,7 @@ export default function StoreCard({ domain, image, name }: IStoreCardProps) {
           alt={name}
           width={1440}
           height={200}
-          className="group-hover:brightness-75 transition-all"
+          className="group-hover:brightness-75 transition-all w-[100%] h-[100%] object-cover"
         />
       </div>
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">

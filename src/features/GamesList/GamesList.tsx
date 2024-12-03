@@ -1,13 +1,14 @@
 import GameCard from '@/features/GamesList/GameCard';
 import { getGames } from '@/lib/api/games';
 import { Container } from '@/shared/Container';
+import { ErrorMessage } from '@/shared/ErrorMessage';
 import { SectionHeader } from '@/shared/SectionHeader';
 
 export default async function GameListContainer() {
   const { error, data } = await getGames();
 
   if (error) {
-    return <h1>Someghint went wrong.</h1>;
+    return <ErrorMessage />;
   }
 
   return (

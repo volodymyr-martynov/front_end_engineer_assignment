@@ -1,16 +1,15 @@
 import StoreCard from '@/features/StoresList/StoreCard';
 import { getStores } from '@/lib/api/stores';
 import { Container } from '@/shared/Container';
+import { ErrorMessage } from '@/shared/ErrorMessage';
 import { SectionHeader } from '@/shared/SectionHeader';
 
 export default async function StoresList() {
   const { error, data: storesList } = await getStores();
 
   if (error) {
-    return <h1>SWW</h1>;
+    return <ErrorMessage />;
   }
-
-  console.log(storesList[0]);
 
   return (
     <Container>

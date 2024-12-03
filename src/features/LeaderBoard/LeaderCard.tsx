@@ -11,7 +11,7 @@ export default function LeaderBoardCard({
   return (
     <div
       key={id}
-      className="relative flex items-center gap-6 mb-4 p-5 bg-gray-800 rounded-lg shadow-medium transform transition-transform hover:scale-105 hover:shadow-heavy hover:bg-gray-700"
+      className="relative flex flex-col md:flex-row items-center gap-6 mb-4 p-5 bg-gray-800 rounded-lg shadow-medium transform transition-transform hover:scale-105 hover:shadow-heavy hover:bg-gray-700"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 opacity-20 blur-xl rounded-lg"></div>
       <Image
@@ -27,7 +27,7 @@ export default function LeaderBoardCard({
           {positions.map(({ id, name }) => (
             <span
               key={id}
-              className="inline-block text-sm bg-green-500 text-white px-3 py-1 rounded-xl mr-2 transform transition-transform hover:scale-110"
+              className="inline-block text-sm bg-green-500 text-white px-3 py-1 rounded-xl mr-2 mb-2 transform transition-transform hover:scale-110"
             >
               {name}
             </span>

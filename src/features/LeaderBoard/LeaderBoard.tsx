@@ -1,14 +1,14 @@
 import LeaderBoardCard from '@/features/LeaderBoard/LeaderCard';
 import { getCreators } from '@/lib/api/creators';
 import { Container } from '@/shared/Container';
+import { ErrorMessage } from '@/shared/ErrorMessage';
 import { SectionHeader } from '@/shared/SectionHeader';
-import Image from 'next/image';
 
 export default async function LeaderBoard() {
   const { error, data: creatorsList } = await getCreators();
 
   if (error) {
-    return <h1>SWW</h1>;
+    return <ErrorMessage />;
   }
 
   return (
