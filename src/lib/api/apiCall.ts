@@ -6,23 +6,23 @@ interface IApiCallParams {
 export default async function apiCall<T>({
   path,
   limit = 20,
-}: IApiCallParams): Promise<{
-  data: T[];
-  error?: string;
-}> {
+}: IApiCallParams): Promise<T | { error: string }> {
   try {
     const res = await fetch(
-      `https://api.rawg.io/api${path}?key=${process.env.API_KEY}&page_size=${limit}`
+      `https://api.rawg.io/api${path}?key=${process.env.API_KEY}&page_size=${limit}`,
+      {
+        cache: 'force-cache',
+        next: {
+          revalidate: 3600,
+        },
+      }
     );
     const data = await res.json();
 
-    return {
-      data: data?.results || data,
-    };
+    return data;
   } catch (error) {
     return {
       error: `${error}`,
-      data: [],
     };
   }
 }

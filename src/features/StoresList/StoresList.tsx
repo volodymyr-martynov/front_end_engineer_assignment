@@ -5,9 +5,9 @@ import { ErrorMessage } from '@/shared/ErrorMessage';
 import { SectionHeader } from '@/shared/SectionHeader';
 
 export default async function StoresList() {
-  const { error, data: storesList } = await getStores();
+  const storesList = await getStores();
 
-  if (error) {
+  if ('error' in storesList) {
     return <ErrorMessage />;
   }
 
@@ -15,7 +15,7 @@ export default async function StoresList() {
     <Container>
       <SectionHeader title="Stores list" />
       <div className="flex flex-col">
-        {storesList.map(({ name, image_background, slug, domain }) => (
+        {storesList.results.map(({ name, image_background, slug, domain }) => (
           <StoreCard
             key={slug}
             name={name}

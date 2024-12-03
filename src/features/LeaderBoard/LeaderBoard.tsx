@@ -5,16 +5,16 @@ import { ErrorMessage } from '@/shared/ErrorMessage';
 import { SectionHeader } from '@/shared/SectionHeader';
 
 export default async function LeaderBoard() {
-  const { error, data: creatorsList } = await getCreators();
+  const creatorsList = await getCreators();
 
-  if (error) {
+  if ('error' in creatorsList) {
     return <ErrorMessage />;
   }
 
   return (
     <Container>
       <SectionHeader title="Leaderboard" />
-      {creatorsList.map((creator) => (
+      {creatorsList.results.map((creator) => (
         <LeaderBoardCard key={creator.id} item={creator} />
       ))}
     </Container>

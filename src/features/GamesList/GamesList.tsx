@@ -5,9 +5,9 @@ import { ErrorMessage } from '@/shared/ErrorMessage';
 import { SectionHeader } from '@/shared/SectionHeader';
 
 export default async function GameListContainer() {
-  const { error, data } = await getGames();
+  const gamesList = await getGames();
 
-  if (error) {
+  if ('error' in gamesList) {
     return <ErrorMessage />;
   }
 
@@ -15,15 +15,17 @@ export default async function GameListContainer() {
     <Container>
       <SectionHeader title="Games list" />
       <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {data.map(({ id, slug, name, background_image, released }) => (
-          <GameCard
-            key={id}
-            slug={slug}
-            title={name}
-            image={background_image}
-            released={released}
-          />
-        ))}
+        {gamesList.results.map(
+          ({ id, slug, name, background_image, released }) => (
+            <GameCard
+              key={id}
+              slug={slug}
+              title={name}
+              image={background_image}
+              released={released}
+            />
+          )
+        )}
       </div>
     </Container>
   );

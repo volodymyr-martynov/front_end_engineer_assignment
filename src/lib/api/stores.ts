@@ -1,9 +1,9 @@
 'use server';
 
 import apiCall from '@/lib/api/apiCall';
-import { IApiResponse } from '@/types/apiResponse';
+import { IApiResponseList } from '@/types/apiResponse';
 import { IStore } from '@/types/store';
 
-export async function getStores(): Promise<IApiResponse<IStore>> {
-  return apiCall<IStore>({ path: '/stores', limit: 10 });
+export async function getStores(): Promise<IApiResponseList<IStore>> {
+  return apiCall<IApiResponseList<IStore>>({ path: '/stores', limit: 10 });
 }

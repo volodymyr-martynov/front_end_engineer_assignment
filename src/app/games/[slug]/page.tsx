@@ -1,11 +1,15 @@
 import { GameDetails } from '@/features/GameDetails';
 import { getGameBySlug } from '@/lib/api/games';
+import { ErrorMessage } from '@/shared/ErrorMessage';
 
 export default async function GameDetailsPage({ params }: any) {
   const { slug } = await params;
 
-  const gameDataSource = await getGameBySlug(slug);
-  const gameData = gameDataSource.data;
+  const gameDetailsData = await getGameBySlug(slug);
 
-  return <GameDetails gameData={gameData} />;
+  if ('error' in gameDetailsData) {
+    return <ErrorMessage />;
+  }
+
+  return <GameDetails gameData={gameDetailsData} />;
 }
