@@ -1,4 +1,7 @@
+import StoreCard from '@/features/StoresList/StoreCard';
 import { getStores } from '@/lib/api/stores';
+import { Container } from '@/shared/Container';
+import { SectionHeader } from '@/shared/SectionHeader';
 
 export default async function StoresList() {
   const { error, data: storesList } = await getStores();
@@ -8,11 +11,18 @@ export default async function StoresList() {
   }
 
   return (
-    <div>
-      <h1>Stores list</h1>
-      {storesList.map((store) => (
-        <h1 key={store.id}>{store.name}</h1>
-      ))}
-    </div>
+    <Container>
+      <SectionHeader title="Stores list" />
+      <div className="flex flex-col">
+        {storesList.map(({ name, image_background, slug, domain }) => (
+          <StoreCard
+            key={slug}
+            name={name}
+            image={image_background}
+            domain={domain}
+          />
+        ))}
+      </div>
+    </Container>
   );
 }

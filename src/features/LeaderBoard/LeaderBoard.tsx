@@ -1,4 +1,8 @@
+import LeaderBoardCard from '@/features/LeaderBoard/LeaderCard';
 import { getCreators } from '@/lib/api/creators';
+import { Container } from '@/shared/Container';
+import { SectionHeader } from '@/shared/SectionHeader';
+import Image from 'next/image';
 
 export default async function LeaderBoard() {
   const { error, data: creatorsList } = await getCreators();
@@ -8,11 +12,11 @@ export default async function LeaderBoard() {
   }
 
   return (
-    <div>
-      <h1>Leaderboard</h1>
+    <Container>
+      <SectionHeader title="Leaderboard" />
       {creatorsList.map((creator) => (
-        <h1>{creator.name}</h1>
+        <LeaderBoardCard key={creator.id} item={creator} />
       ))}
-    </div>
+    </Container>
   );
 }

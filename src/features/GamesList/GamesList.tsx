@@ -1,5 +1,7 @@
 import GameCard from '@/features/GamesList/GameCard';
 import { getGames } from '@/lib/api/games';
+import { Container } from '@/shared/Container';
+import { SectionHeader } from '@/shared/SectionHeader';
 
 export default async function GameListContainer() {
   const { error, data } = await getGames();
@@ -9,18 +11,18 @@ export default async function GameListContainer() {
   }
 
   return (
-    <div>
-      <h1 className="text-4xl font-bold mb-4">Games list</h1>
+    <Container>
+      <SectionHeader title="Games list" />
       <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {data.map(({ id, name, background_image }) => (
+        {data.map(({ id, name, background_image, released }) => (
           <GameCard
             key={id}
             title={name}
             image={background_image}
-            release_date="222"
+            released={released}
           />
         ))}
       </div>
-    </div>
+    </Container>
   );
 }
